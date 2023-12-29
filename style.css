@@ -1,0 +1,437 @@
+/* Plugin */
+
+.swal-button {
+   background-color: #6949FF !important;
+}
+
+/* General */
+
+html{
+   scroll-behavior: smooth !important;
+}
+
+body {
+   font-family: 'Poppins', sans-serif;
+   font-size: 16px;
+   overflow-x: hidden;
+}
+
+p {
+   line-height: 1.4rem;
+   margin-bottom: 2rem;
+}
+
+ol li, ul li {
+   margin-bottom: 2rem;
+   line-height: 1.4rem;
+}
+
+.container {
+   max-width: 700px;
+   margin: 0 auto;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+
+.bg {
+   position: relative;
+}
+
+.bg:after {
+   content: "";
+   z-index: -1;
+   position: absolute;
+   top: 0;
+   left: 50%;
+   width: 100vw;
+   height: 100%;
+   background: inherit;
+   transform: translateX(-50%);
+}
+
+section {
+   padding-top: 4rem;
+   padding-bottom: 4rem;
+}
+
+.section-title {
+   font-size: 1.1rem;
+   text-transform: uppercase;
+   font-weight: 800;
+   text-align: center;
+   margin-bottom: 2.5rem;
+}
+
+.btn {
+   cursor: pointer;
+   display: inline-block;
+   text-align: center;
+   text-decoration: none;
+   border-radius: 10px;
+   background-color: #6949FF;
+   text-transform: uppercase;
+   font-weight: 800;
+   color: #fff;
+   font-size: 0.8rem;
+   padding: 0 1.5rem;
+   line-height: 45px;
+   height: 45px;
+   outline: none;
+   border: none;
+   box-sizing: border-box;
+}
+
+#toggle-menu {
+   display: none;
+}
+
+/* Style */
+
+.header {
+   background-color: #EBE7FF;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 15px 15px;
+}
+
+.header .logo {
+   height: auto;
+   width: 90px;
+}
+
+.header .toggle-menu {
+   height: auto;
+   width: 30px;
+}
+
+.menu {
+   display: none;
+   align-items: center;
+   flex-direction: column;
+   justify-content: center;
+   list-style-type: none;
+   background-color: #EBE7FF;
+   padding-left: 0;
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 9;
+   margin: 0;
+}
+
+#toggle-menu:checked ~ .menu {
+   display: flex;
+}
+
+.toggle-menu {
+   cursor: pointer;
+}
+
+.menu li a {
+   display: block;
+   color: inherit;
+   font-weight: 800;
+   text-decoration: none;
+   text-align: center;
+}
+
+.menu li a label {
+   cursor: pointer;
+}
+
+.menu > li:last-child > label::after {
+   position: absolute;
+   top: 10px;
+   right: 20px;
+}
+
+.menu > li:last-child > label::after {
+   cursor: pointer;
+   content: "\2715";
+   font-weight: 500;
+   font-size: 30px;
+   color: #6949FF;
+}
+
+.hero {
+   background-color: #EBE7FF;
+   padding: 1px 15px;
+   text-align: center;
+}
+
+.hero-upper-title {
+   font-size: 1.2rem;
+   font-weight: 300;
+}
+
+.hero-title {
+   font-size: 1.2rem;
+   line-height: 1.5rem;
+   text-transform: uppercase;
+}
+
+.hero-lower-title {
+   font-size: 1.3rem;
+   font-weight: 300;
+}
+
+.hero .btn {
+   margin-bottom: 1rem;
+}
+
+.hero img {
+   display: block;
+   position: relative;
+   left: -15px;
+   width: calc(100% + 30px);
+}
+
+.overview {
+}
+
+.benifits {
+   background-color: #EBE7FF;
+}
+
+.benifits-upper-title {
+   text-align: center;
+}
+
+.benifits-title {
+   text-align: center;
+}
+
+.benifits img {
+   display: block;
+   margin: 0 auto;
+}
+
+.benifits ul {
+   padding-left: 0;
+}
+
+.benifits ul li {
+   list-style-type: none;
+	padding: .25em 0 0 2.5em;
+	position: relative;
+}
+
+.benifits ul li:after {
+   content: " ";
+   display: block;
+   width: .3em;
+   height: .8em;
+   border: solid #34a33d;
+   border-width: 0 .2em .2em 0;
+   position: absolute;
+   left: 1em;
+   top: 10px;
+   margin-top: -.2em;
+   -webkit-transform: rotate(45deg);
+   -moz-transform: rotate(45deg);
+   -o-transform: rotate(45deg);
+   transform: rotate(45deg);
+}
+
+.buy .subscription {
+   text-align: center;
+}
+
+
+.howitworks ul {
+   padding-left: 0;
+   counter-reset: section;
+}
+
+.howitworks ul li {
+   list-style-type: none;
+   position: relative;
+   margin-bottom: 0;
+   padding-bottom: 2rem;
+   padding-left: 45px;
+}
+
+.howitworks ul li:before {
+   background-color: #6949FF;
+   color: #fff;
+   counter-increment: section;
+   content: counter(section);
+   display: block;
+   border-radius: 100px;
+   height: 25px;
+   width: 25px;
+   font-weight: 700;
+   position: absolute;
+   left: 10px;
+   top: 2px;
+   text-align: center;
+   line-height: 25px;
+   font-size: 14px;
+} 
+ 
+.howitworks ul li:after {
+   background-color: #6949FF;
+   content: "";
+   display: block;
+   height: 103%;
+   width: 4px;
+   position: absolute;
+   top: 0;
+   left: 20px;
+   z-index: -1;
+}
+
+.howitworks ul li:first-child::after {
+   top: 6px;
+}
+
+.howitworks ul li:last-child::after {
+   display: none;
+}
+
+.buy p {
+   text-align: center;
+}
+
+.buy .subscription {
+   display: block;
+   cursor: pointer;
+   background-color: #f3f0ff;
+   border-radius: 10px;
+   border: 2px solid #6949FF;
+   margin-bottom: 1rem;
+   position: relative;
+}
+
+.buy .subscription p {
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.buy .subscription-title {
+   font-size: 1rem;
+}
+
+.buy .subscription-discount {
+   font-weight: 300;
+   text-decoration: line-through;
+}
+
+.buy .subscription-label {
+   font-weight: 300;
+}
+
+.buy .subscription-price {
+   color: orange;
+   font-weight: 800;
+   font-size: 1.3rem;
+   margin-bottom: 1em !important
+}
+
+.buy .subscription input {
+   height: 20px;
+   width: 20px;
+   position: absolute;
+   left: 10px;
+   top: 10px;
+}
+
+.buy .input-label {
+   display: block;
+   font-weight: 400;
+   margin-bottom: 10px;
+}
+
+.buy .input {
+   box-sizing: border-box;
+   border: 2px solid #6949FF;
+   border-radius: 10px;
+   height: 45px;
+   width: 100%;
+   padding: 3px 10px;
+   margin-bottom: 1em;
+}
+
+.buy .btns {
+   padding-top: 30px;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.buy .btns .btn {
+   margin-bottom: 20px;
+   width: 100%;
+}
+
+@media (min-width: 450px) {
+   .buy .btns .btn {
+      margin-right: 10px;
+      width: 200px;
+   }  
+}
+
+.buy .btns .btn:last-child {
+   background-color: grey;
+}
+
+
+.faq {
+   background-color: #EBE7FF;
+}
+
+.faq .question {
+   display: block;
+   cursor: pointer;
+   background-color: #fff;
+   box-shadow: 0px 2px 6.8px rgba(0, 0, 0, 0.25);
+   border-radius: 7px;
+   padding: 10px 30px 10px 20px;
+   margin-bottom: 1rem;
+   position: relative;
+   text-decoration: none;
+   color: inherit;
+}
+
+.faq .question::before {
+   color: #6949FF;
+   content: "+";
+   position: absolute;
+   right: 15px;
+   font-size: 30px;
+   top: 18px;
+}
+
+.faq .question:focus::before {
+   content: "-";
+}
+
+.faq .question h5 {
+   font-size: 0.95rem;
+   line-height: 1.4em;
+   margin: 15px 0;
+}
+
+.faq .question > div {
+   display: none;
+}
+
+.faq .question:focus > div {
+   display: block;
+}
+
+
+.guarantee {
+   background-color: #EBE7FF;
+}
+
+.guarantee img {
+   display: block;
+   margin: 0 auto;
+}
+
+.guarantee p {
+   text-align: justify;
+}
