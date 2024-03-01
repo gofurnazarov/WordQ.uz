@@ -85,6 +85,34 @@ section {
    display: none;
 }
 
+
+.input-label {
+   display: block;
+   font-weight: 800;
+   margin-bottom: 10px;
+}
+
+.input {
+   box-sizing: border-box;
+   border: 2px solid #cec6f1;
+   border-radius: 10px;
+   height: 45px;
+   width: 100%;
+   padding: 3px 10px;
+   margin-bottom: 1em;
+}
+
+.input:focus {
+   border-color: #6949FF;
+   outline: none;
+}
+
+textarea.input {
+   min-height: 250px;
+   padding: 15px 10px;
+   line-height: 20px;
+}
+
 /* Style */
 
 .header {
@@ -309,72 +337,6 @@ section {
 .buy .subscription p {
    margin-top: 10px;
    margin-bottom: 10px;
-}
-
-.buy .subscription-title {
-   font-size: 1rem;
-}
-
-.buy .subscription-discount {
-   font-weight: 300;
-   text-decoration: line-through;
-}
-
-.buy .subscription-label {
-   font-weight: 300;
-}
-
-.buy .subscription-price {
-   color: orange;
-   font-weight: 800;
-   font-size: 1.3rem;
-   margin-bottom: 1em !important
-}
-
-.buy .subscription input {
-   height: 20px;
-   width: 20px;
-   position: absolute;
-   left: 10px;
-   top: 10px;
-}
-
-.buy .input-label {
-   display: block;
-   font-weight: 400;
-   margin-bottom: 10px;
-}
-
-.buy .input {
-   box-sizing: border-box;
-   border: 2px solid #6949FF;
-   border-radius: 10px;
-   height: 45px;
-   width: 100%;
-   padding: 3px 10px;
-   margin-bottom: 1em;
-}
-
-.buy .btns {
-   padding-top: 30px;
-   display: flex;
-   flex-wrap: wrap;
-}
-
-.buy .btns .btn {
-   margin-bottom: 20px;
-   width: 100%;
-}
-
-@media (min-width: 450px) {
-   .buy .btns .btn {
-      margin-right: 10px;
-      width: 200px;
-   }  
-}
-
-.buy .btns .btn:last-child {
-   background-color: grey;
 }
 
 

@@ -37,7 +37,7 @@
             Hoziroq ilovani Play Store dan yuklab oling va so’z boyligingizni sifatli va samarali oshirishni boshlang!
          </p>
 
-         <a href="#buy" class="btn">Ilovani yuklab olish</a>
+         <a href="https://play.google.com/store/apps/details?id=com.wordq_en_uz" class="btn">Ilovani yuklab olish</a>
          <img src="screens.png" alt="WordQ">
       </section>
       <section class="overview container" id="overview">
@@ -184,56 +184,32 @@
       </section>
 
       <section class="buy container" id="buy">
-         <h3 class="section-title buy-title">QULAY TARIF REJALAR</h3>
+         <h3 class="section-title buy-title">HOZIROQ YUKLAB OLING</h3>
 
          <p>
-            Hoziroq ilovaning o'zingizga mos Premium obunasini sotib oling va jiddiy maqsadlaringiz sari jiddiy qadam tashlang.
+            Hoziroq ilovani yuklab oling va jiddiy maqsadlaringiz sari jiddiy qadam tashlang.
          </p>
-         <form id="form">
-            <label class="subscription">
-               <input type="radio" name="subscription">
-               <h5 class="subscription-title">1 oylik obuna</h5>
-               <p class="subscription-label">Atiga</p>
-               <p class="subscription-price">11 000 so'm</p>
-            </label>
 
-            <label class="subscription">
-               <input type="radio" name="subscription">
-               <h5 class="subscription-title">6 oylik obuna</h5>
-               <p class="subscription-discount">66 000 so'm</p>
-               <p class="subscription-label">Oyiga atiga 9500 so'mdan</p>
-               <p class="subscription-price">57 000 so'm</p>
-            </label>
-
-            <label class="subscription">
-               <input type="radio" name="subscription" checked>
-               <h5 class="subscription-title">1 yillik obuna</h5>
-               <p class="subscription-discount">132 000 so'm</p>
-               <p class="subscription-label">Oyiga atiga 8000 so'mdan</p>
-               <p class="subscription-price">97 000 so'm</p>
-            </label>
-            
-            <label class="input-label">Ismingiz</label>
-            <input type="text" class="input" placeholder="Ismingizni kiriting" id="name">
-            
-            <label class="input-label">Telefon raqamingiz</label>
-            <input type="tel" class="input" value="+998" id="phone_number">
-            <div class="btns">
-               <button type="submit" class="btn">Hoziroq sotib olish</button>
-               <a href="https://play.google.com/store/apps/details?id=com.wordq_en_uz" target="_blank" rel="noopener noreferrer" class="btn">Bepul sinab ko'rish</a>
-            </div>
-         </form>         
-         
-
+         <div class="section-title">
+            <a href="https://play.google.com/store/apps/details?id=com.wordq_en_uz" target="_blank" rel="noopener noreferrer" class="btn">Bepul sinab ko'rish</a>
+         </div>
       </section>
 
       <section class="guarantee container bg">
-         <img src="guarantee.png" alt="guarantee">
-         <h3 class="section-title guarantee-title">100% Kafolat beramiz</h3>
+         <!-- <img src="guarantee.png" alt="guarantee"> -->
+         <h3 class="section-title guarantee-title">Sizda ilova bo'yicha takliflar bormi?</h3>
 
          <p>
-            Tavakkal qilishingiz shart emas, chunki biz mijozlarimiz xizmatlarimizdan 100% qoniqishiga doim ishonch hosil qilamiz. Shuning uchun agarda Premium obunani sotib olganingizdan so'ng 30 kun ichida Premium imkoniyatlar sizni qoniqtirmasa yoki fikringizni o'zgartirsangiz sizga hech qanday ortiqcha savollarsiz pulingizni 100% qaytarib beramiz.
+            Agar sizda ilova bo'yicha qo'shimcha takliflar, shikoyatlar yoki savollar bo'lsa biza yuboringishingiz mumkin va biz ularni o'rganib chiqamiz. Agar siz bilan qayta bog'lanishimiz kerak bo'lsa, xabaringizda siz bilan bog'lanish uchun ma'lumotlar qoldirishni unutmang (masalan, telefon raqam, email, telegram). 
          </p>
+         <form id="form">
+            <label class="input-label">Xabar</label>
+            <textarea class="input" id="message" placeholder="Xabar matni . . ."></textarea>
+            
+            <div class="btns">
+               <button type="submit" class="btn">Xabarni yuborish</button>
+            </div>
+         </form>         
       </section>
    </main>
 
@@ -247,28 +223,22 @@
       document.querySelector('#form').onsubmit = function(event) {
          event.preventDefault();
 
-         let name = document.querySelector('#name').value;
-         let phoneNumber = document.querySelector('#phone_number').value;
+         let message = document.querySelector('#message').value;
 
-         if(name.length < 3) {
-            swal("Xato!", "Ismingizni kiriting!", "error");
-            return;
-         }
-
-         if(phoneNumber.length < 6) {
-            swal("Xato!", "Telefon raqamingizni kiriting!", "error");
+         if(message.length < 50) {
+            swal("Xato!", "Xabar kamida 50 harifdan iborat bo'lishi kerak", "error");
             return;
          }
 
          const xhr = new XMLHttpRequest();
-         xhr.open("GET", "https://api.telegram.org/bot6698607325:AAFPcI1S3csoT3NKu04Px8OftzE14D8IHrQ/sendMessage?chat_id=506695006&parse_mode=HTML&text=<b>Yangi buyurtma</b>%0A%0AIsm: " + name + "%0ATelefon: " + phoneNumber);
+         xhr.open("GET", "https://api.telegram.org/bot6698607325:AAFPcI1S3csoT3NKu04Px8OftzE14D8IHrQ/sendMessage?chat_id=506695006&parse_mode=HTML&text=<b>Yangi xabar:</b>%0A%0A" + message);
          xhr.send();
          xhr.responseType = "json";
          xhr.onload = () => {
             if (xhr.readyState == 4 && xhr.status == 200) 
             {
-               swal("Uraaa!", "Buyurtmangiz qabul qilindi. Tez orada siz bilan bog'lanamiz va ilovaning Premium versiyasini faollashtrish uchun \"Maxsus Kod\" ni sizga taqdim etamiz! Ungacha ilovamizni Play Store dan yuklab olishingiz mumkin.", "success").then((value) => {
-                  window.open("https://play.google.com/store/apps/details?id=com.wordq_en_uz", "_blank")
+               swal("Bajarildi!", "Xabaringiz mavuffaqiyatli yuborildi va tez orada biz uni o'rganib chiqamiz!", "success").then((value) => {
+                  document.querySelector('#message').value = '';
                });
             } 
             else 
